@@ -28,7 +28,7 @@ public class MissionDemolition : MonoBehaviour
     public GameObject    castle; // Current castle
     public GameMode      mode = GameMode.idle;
     public string        showing = "Show Slingshot"; // FollowCam mode
-    public static Text          scoreGT;
+    public static Text   scoreGT;
 
 
     void Start()

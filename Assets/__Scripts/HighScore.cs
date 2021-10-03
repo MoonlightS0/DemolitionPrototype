@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class HighScore : MonoBehaviour
 {
-    static public int score = 10;      //static public required for read score and work with him.
+    static public int score = 1;      //static public required for read score and work with him.
     private void Awake()
     {
+        //PlayerPrefs.DeleteAll();
+
         //If the HighScore value already exists in PlayerPrefs, read it
         if (PlayerPrefs.HasKey("HighScore"))
         {
