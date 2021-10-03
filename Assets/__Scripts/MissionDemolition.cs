@@ -28,9 +28,18 @@ public class MissionDemolition : MonoBehaviour
     public GameObject    castle; // Current castle
     public GameMode      mode = GameMode.idle;
     public string        showing = "Show Slingshot"; // FollowCam mode
+    public static Text          scoreGT;
+
 
     void Start()
     {
+        // Get a link to the ScoreCounter game object
+        GameObject scoreGO = GameObject.Find("ScoreCounter");
+        // Get the Text component of this game object
+        scoreGT = scoreGO.GetComponent<Text>();
+        //Set the initial number of points to 0
+        scoreGT.text = "0";
+
         S = this; // Define a single object
 
         level = 0;
@@ -87,9 +96,13 @@ public class MissionDemolition : MonoBehaviour
             SwitchView("Show Both");
             // Start a new level in 2 seconds
             Invoke("NextLevel", 2f);
-        }
-    }
 
+            // Add points for the hit at green zone
+            int numCh = 3;
+            AccessingToCurrentScoreOfPlayer(numCh);
+        }
+
+    }
     void NextLevel() {
         level++;
         if (level == levelMax)
@@ -128,5 +141,26 @@ public void SwitchView(string eView = "")
     public static void ShotFired()
     {
         S.shotsTaken++;
+
+        //Minus one score for one shot
+        int numCh = -1;
+        AccessingToCurrentScoreOfPlayer(numCh);
+        
     }
+
+    static void AccessingToCurrentScoreOfPlayer(int numCh)//numCh - number change of score,also it remeber high score
+    {
+        // Convert text to scoreGT to an integer
+        int score = int.Parse(scoreGT.text);
+        //Changing score
+        score += numCh;
+        // Convert the number of points back to a string and display it on the screen
+        scoreGT.text = score.ToString();
+        //Remember the highest achievement
+        if (score > HighScore.score)
+        {
+            HighScore.score = score;
+        }
+    }
+
 }

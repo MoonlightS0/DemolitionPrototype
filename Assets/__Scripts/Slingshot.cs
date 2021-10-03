@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Slingshot : MonoBehaviour
 {
@@ -9,14 +10,12 @@ public class Slingshot : MonoBehaviour
     [Header("Set in Inspector")]
     public GameObject prefabProjectile;
     public float velocityMult = 8f;
-
     // fields that are set in the Unity inspector dinamicly
     [Header("Set Dynamically")]
     public GameObject launchPoint;
     public Vector3 launchPos;
     public GameObject projectile;
     public bool aimingMode;
-
     private Rigidbody projectileRigidbody;
 
     static public Vector3 LAUNCH_POS
@@ -50,7 +49,7 @@ public class Slingshot : MonoBehaviour
         print("Slingshot:OnMouseExit()");
         launchPoint.SetActive(false);
     }
-
+   
     void OnMouseDown()
     {
 
