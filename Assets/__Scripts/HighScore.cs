@@ -17,7 +17,7 @@ public class HighScore : MonoBehaviour
         }
         //Save the highest achievement of HighScore to the repository in Unity
         PlayerPrefs.SetInt("HighScore", score);
-        Debug.Log("New High Score writed!");
+        Debug.Log("HighScore - New High Score writed!");
     }
 
     // Update is called once per frame

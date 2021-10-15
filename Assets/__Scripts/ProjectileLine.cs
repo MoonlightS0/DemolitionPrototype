@@ -7,7 +7,7 @@ public class ProjectileLine : MonoBehaviour
     static public ProjectileLine S; //Singleton
     [Header("Set in Inspector")]
     public float minDist = 0.1f;
-
+    [Header("Set Dynamically")]
     private LineRenderer line;
     private GameObject _poi;
     private List<Vector3> points;
@@ -15,8 +15,7 @@ public class ProjectileLine : MonoBehaviour
     void Awake()
     {
         S = this; // Set the singleton
-                  // Get a reference to the LineRenderer
-        line = GetComponent<LineRenderer>();
+        line = GetComponent<LineRenderer>(); // Get a reference to the LineRenderer
         // Disable the LineRenderer until if it's needed
         line.enabled = false;
         // Initialize the points List
@@ -58,7 +57,7 @@ public class ProjectileLine : MonoBehaviour
             return;
         }
         if (points.Count == 0)
-        { // If this is tha launch point
+        { // If this is launch point
             Vector3 launchPosDiff = pt - Slingshot.LAUNCH_POS; // To be defined
                                                                // it adds an extra bit of line to aid aiming later
             points.Add(pt + launchPosDiff);
@@ -112,6 +111,7 @@ public class ProjectileLine : MonoBehaviour
             {
                 return; // Return if we didn't fimd a poi
             }
+
         }
         // If the object of interest is found, try to add a point with its coordinates in each FixedUpdate
         AddPoint();

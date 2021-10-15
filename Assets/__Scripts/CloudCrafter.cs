@@ -13,6 +13,8 @@ public class CloudCrafter : MonoBehaviour
     public float cloudScaleMin = 1; // Min. scale of each cloud
     public float cloudScaleMax = 3; // Max, scale of each cloud
     public float cloudSpeedMult = 0.5f; // Cloud velocity coefficient
+    [Header("Set Dynamically")]
+
 
     private GameObject[] cloudInstances;
     void Awake()

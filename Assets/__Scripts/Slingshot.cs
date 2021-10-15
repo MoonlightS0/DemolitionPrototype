@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Slingshot : MonoBehaviour
 {
-    static private Slingshot S; //This is a hidden static instance of Slingshot, which will play the role of a single object
+    static public Slingshot S; //This is a hidden static instance of Slingshot, which will play the role of a single object
     // fields that are set in the Unity inspector
     [Header("Set in Inspector")]
     public GameObject prefabProjectile;
@@ -40,13 +40,13 @@ public class Slingshot : MonoBehaviour
     void OnMouseEnter()     //function for detecting(in console) the player's mouse in a close radius
                             //also that turn on the light (zone of control of the slingshot) - detection for user
     {
-        print("Slingshot:OnMouseEnter()");
+        //print("Slingshot:OnMouseEnter()");
         launchPoint.SetActive(true);
     }
     void OnMouseExit()      //function for detecting(in console) the exit of the player's mouse from the radius
                             //also that turn off the light (zone of control of the slingshot) - detection for user
     {
-        print("Slingshot:OnMouseExit()");
+        //print("Slingshot:OnMouseExit()");
         launchPoint.SetActive(false);
     }
    
