@@ -639,7 +639,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
   cloudProjectId: 165945dc-cb77-4f17-9857-bbcd1aad57d1
-  projectName: DemolitionProyotype
+  projectName: DemolitionPrototype
   organizationId: unity_svcsohgy_xxe-q
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
